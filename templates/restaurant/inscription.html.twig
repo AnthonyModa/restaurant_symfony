@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+    {% block title %}
+        Inscription | Manger à Visé
+    {% endblock %}
+
+    {% block body %}
+
+
+<div class="main">
+
+    <!--=====================
+              Content
+    ======================-->
+    <section id="content"><div class="ic">More Website Templates @ TemplateMonster.com - July 14, 2014!</div>
+        <div class="container">
+            <div class="row">
+
+                <div class="clear"></div>
+
+                <div class="grid_6 preffix_1">
+                    <h4>Inscription</h4>
+                    <form id="contact-form">
+                        <div class="contact-form-loader"></div>
+                        <fieldset>
+
+
+                            <label class="email">
+                                <input type="text" name="email" placeholder="E-mail:" value="" data-constraints="@Required @Email" />
+                                <span class="empty-message">*This field is required.</span>
+                                <span class="error-message">*This is not a valid email.</span>
+                            </label>
+
+                            <label class="password">
+                                <input type="text" name="password" placeholder="Password:" value="" data-constraints="@Required"  />
+                                <span class="empty-message">*This field is required.</span>
+
+                            </label>
+
+
+
+                            <div>
+
+                                <a href="#" class="btn" data-type="submit">Inscription</a>
+                            </div>
+
+                            <div>
+                            </div>
+                        </fieldset>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}

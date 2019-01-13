@@ -1,0 +1,126 @@
+{% extends 'base.html.twig' %}
+
+    {% block title %}
+        Réservation | Manger à Visé
+    {% endblock %}
+
+
+
+    {% block body %}
+<div class="main">
+
+    <!--=====================
+              Content
+    ======================-->
+
+
+
+    <section id="content">
+        <div class="container">
+            <div class="row">
+                <div class="grid_9">
+                    <h4>Restaurant</h4>
+                    <div class="row">
+                        <div class="grid_8">
+                            <img src="images/page2_img.jpg" alt="" class="img_inner fleft" width="740" height="470">
+                            <div class="extra_wrapper">
+                                <p class="text1 offset__1">Mervamus at magna non nunc tristique rhoncus. Aliquam nibh ante, egestas id dictum a,ommodo luctus liberoret. Praesent faucibus malesuada faucibus. </p>
+                                <p>Curabitur vel lorem sit amet nullullamcorperermentum. In vitae varius augue, eu consectetur ligula. Etiam dui eros, consectetur laoreet site amet est vel, commodo venenatis eros. </p>
+                                Fusce adipiscing quam id risus sagittis, non nsequaterto lacus interdum. Proin ut tinciduntl nulla, eu sodales
+                            </div>
+                            <div class="container gallery">
+                                <div class="row">
+                                    <div class="grid_8">
+                                        <div class="row">
+                                            <div class="grid_4">
+                                                <div class="view">
+                                                    <div class="mask">
+                                                        <a href="images/gallery/big1.jpg" class="info fa fa-search" title="Full Image"></a>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+
+                                            <div class="grid_4">
+                                                <div class="view">
+                                                    <div class="mask">
+                                                        <a href="images/gallery/big3.jpg" class="info fa fa-search" title="Full Image"></a>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <!--=====================
+                                              Filtre
+                                    ======================-->
+
+                                            <div class="filter">
+                                                <label for="people-select">Nombre de personnes</label>
+                                                <select>
+                                                    <option value="Une personne">Une personne</option>
+                                                    <option value="Deux">Deux Personnes</option>
+                                                    <option value="Plus de 2">Plus de deux personnes</option>
+                                                </select>
+
+                                                <label for="hour-select">Heure</label>
+                                                <input type="time">
+
+                                                <label for="date-select">Date</label>
+                                                <input type="date">
+                                            </div>
+                                            <div class="reservationbuttonfinal">
+                                                <button>Réserver</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="grid_3">
+                    <h4>Informations sur le resto</h4>
+                    <ul class="list">
+                        <li>
+                            <div class="count">1</div>
+                            <div class="extra_wrapper">
+                                <p class="text1 offset__1"><a href="#">Demus at magna non nunc tristique ncuseri tym nibh </a></p>
+                                Icommodo re luctus libero reto. Praesenterto lom cibusertulomi malesuada cibuste. </div>
+                        </li>
+                        <li>
+                            <div class="count">2</div>
+                            <div class="extra_wrapper">
+                                <p class="text1 offset__1"><a href="#">Femus at magna non nunc tristique ncuseri tym. </a></p>
+                                Ecommodo re luctus libero. Praesenterto lom ibusertulomi malesuada cibusteec laoreet </div>
+                        </li>
+                        <li>
+                            <div class="count">3</div>
+                            <div class="extra_wrapper">
+                                <p class="text1 offset__1"><a href="#">Lemus at magna non nunc tristique ncuseri tyiquam  </a></p>
+                                Ocommodo re luctus libero. Praesenterto lom ucibusertulomi malesuada cibusteec laoreet </div>
+                        </li>
+                    </ul>
+                    <h4>Characteristics</h4>
+                    <ul class="list1">
+                        <li><a href="#">Vivamus at magna non nunc tristique </a></li>
+                        <li><a href="#">Aliquam nibh ante, egestas id</a></li>
+                        <li><a href="#">Ommodo luctus libero</a></li>
+                        <li><a href="#">Faucibus malesuada faucibus. Donec </a></li>
+                        <li><a href="#">Laoreet metus id laoreet</a></li>
+                        <li><a href="#">Jalesuadaorem ipsum dolor sit ame</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+

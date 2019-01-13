@@ -1,0 +1,148 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme avisForm 'bootstrap_4_layout.html.twig' %}
+
+    {% block title %}
+        Restaurant | Manger à Visé
+    {% endblock %}
+
+    {% block head_css %}
+    {% endblock %}
+
+
+    {% block body %}
+
+<div class="main">
+
+    <!--=====================
+              Content
+    ======================-->
+    <div class="metadata=">Ce restaurant se trouve dans la catégorie {{ restaurant.category.title }}</div>
+    <section id="content">
+
+        <div class="container">
+            <div class="row">
+                <div class="grid_9">
+                    <h4>{{ restaurant.titre }}</h4>
+                    <div class="row">
+                        <div class="grid_8">
+                            <img src="{{ restaurant.image }}" alt="image du resto" width="350" height="150" class="img_inner fleft">
+                            <div class="extra_wrapper">
+                                <p class="text1 offset__1">{{ restaurant.description | raw }}</p>
+
+                            </div>
+                            <div class="container gallery">
+                                <div class="row">
+                                    <div class="grid_8">
+                                        <div class="row">
+                                            <div class="grid_4">
+                                                <div class="view">
+                                                    <div class="mask">
+                                                        <a href="images/gallery/big1.jpg" class="info fa fa-search" title="Full Image"></a>
+                                                    </div>
+                                                    <h3>{{ restaurant.avis | length }} Comments : </h3>
+                                                </div>
+                                                <blockquote class="bq1">
+                                                    <img src="images/page1_img12.jpg" alt="">
+                                                    <div class="extra_wrapper">
+                                                        <p>“{{ restaurant.avis | raw }}”</p>
+                                                        <div class="color2">- Eva Smith, Client</div>
+                                                    </div>
+                                                </blockquote>
+                                            </div>
+
+
+
+                                            <div class="grid_4">
+                                                <div class="view">
+                                                    <div class="mask">
+                                                        <a href="images/gallery/big3.jpg" class="info fa fa-search" title="Full Image"></a>
+                                                    </div>
+                                                </div>
+                                                <blockquote class="bq1">
+                                                    <img src="images/page1_img13.jpg" alt="">
+                                                    <div class="extra_wrapper">
+                                                        <p>“{{ restaurant.avis | raw }}”</p>
+                                                        <div class="color2">- Mike Brown, Client</div>
+                                                    </div>
+                                                </blockquote>
+                                            </div>
+                                            <div class="reservationbutton">
+                                                <button><a href="{{ path('reservation') }}">Réserver</a></button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <h4 class="head__1">Autres suggestions</h4>
+                    <div class="row">
+                        <div class="grid_3">
+                            <div class="block2">
+                                <div class="maxheight">
+                                    <a href="#"><img src="images/resto1.jpg" alt="" class="img_inner"></a>
+                                    <div class="color2"><a href="{{ path('restaurant', {'id': restaurant.id }) }}">Resto1</a></div>
+                                    <em class="italic">{{ restaurant.description | raw }}</em>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid_3">
+                            <div class="block2">
+                                <div class="maxheight">
+                                    <a href="#"><img src="images/resto2.jpeg" alt="" class="img_inner"></a>
+                                    <div class="color2"><a href="{{ path('restaurant', {'id': restaurant.id }) }}">Resto2</a></div>
+                                    <em class="italic">{{ restaurant.description | raw }}</em>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid_3">
+                            <div class="block2">
+                                <div class="maxheight">
+                                    <a href="#"><img src="images/resto3.jpeg" alt="" class="img_inner"></a>
+                                    <div class="color2"><a href="{{ path('restaurant', {'id': restaurant.id }) }}">Resto3</a></div>
+                                    <em class="italic">{{ restaurant.description | raw }}</em>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="grid_3">
+                    <h4>Informations sur le resto</h4>
+                    <ul class="list">
+                        <li>
+                            <div class="count">1</div>
+                            <div class="extra_wrapper">
+                                <p class="text1 offset__1"><a href="#">{{ restaurant.informations | raw }}</a></p>
+                                {{ restaurant.informations | raw }}</div>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        {% if app.user %}
+        {{ form_start(avisForm) }}
+        {{ form_row(avisForm.author, {'attr' : {'placeholder': 'Votre nom'}}) }}
+        {{ form_row(avisForm.content, {'attr' : {'placeholder': 'Votre commentaire'}}) }}
+        <button type="submit" class="btn btn-success">Commenter</button>
+
+        {{ form_end(avisForm) }}
+        {% else %}
+            <h2>Vous ne pouvez pas laisser de commentaires si vous n'êtes pas connectés</h2>
+            <a href="{{ path('security_login') }}" class="btn btn-primary">
+                Connectez vous !
+            </a>
+        {% endif %}
+    </section>
+
+</div>
+{% endblock %}
+

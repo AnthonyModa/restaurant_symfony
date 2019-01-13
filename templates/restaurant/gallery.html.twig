@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+    {% block title %}
+        Liste de restos | Manger à Visé
+    {% endblock %}
+
+    {% block head_css %}
+    {% endblock %}
+
+
+    {% block body %}
+        <div class="main">
+
+            <!--=====================
+                      Filtre
+            ======================-->
+            <label for="cuisine-select">Cuisine</label>
+            <select>
+                <option value="Française">Française</option>
+                <option value="Italienne">Italienne</option>
+                <option value="Asiatique">Asiatique</option>
+                <option value="Américain">Américain</option>
+            </select>
+
+
+
+            <!--=====================
+                      Content
+            ======================-->
+
+            <section id="content" class="gallery1">
+
+                {% for restaurant in restaurants %}
+                    <div class="container">
+                        <div class="row">
+                            <div class="grid_4">
+                                <div class="block2">
+                                    <div class="maxheight"><a href="{{ path('restaurant', {'id': restaurant.id }) }}" class="text1"> {{ restaurant.titre }} </a><a href="{{ path('restaurant', {'id': restaurant.id }) }}" class="gall_item"><img src="{{ restaurant.image }}" alt="Image du resto"></a></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                {% endfor %}
+            </section>
+        </div>
+    {% endblock %}
+
+

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            {% block title %}
+                Manger à Visé
+            {% endblock %}
+        </title>
+
+            {% block stylesheets %}
+                {# 'app' must match the first argument to addEntry() in webpack.config.js #}
+                {{ encore_entry_link_tags('app') }}
+
+                <!-- Renders a link tag (if your module requires any CSS)
+                     <link rel="stylesheet" href="/build/app.css"> -->
+                <link rel="icon" href="{{ asset('images/favicon.ico') }}">
+                <link rel="stylesheet" href="{{ asset('css/touchTouch.css') }}">
+                <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+                <link rel="stylesheet" media="screen" href="{{ asset('css/ie.css') }}">
+            {% endblock %}
+
+
+    </head>
+
+            <!--==============================
+                     header
+        =================================-->
+
+            {% block head_css %}
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+            {% endblock %}
+
+            {% block head_js %}
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+            {% endblock %}
+
+            {% block header %}
+            <header>
+                <div class="container">
+                    <div class="row">
+                        <div class="grid_12">
+                            <h1>
+                                <a href="{{ path('home') }}">
+                                    <img src="../../images/logoBird.png" alt="Logo alt" width="78" height="96">
+                                </a>
+                            </h1>
+
+                            <div class="navigation ">
+                                <nav>
+                                    <ul class="sf-menu">
+                                        <li><a href="{{ path('home') }}">Home</a></li>
+                                        <li><a href="{{ path('gallery') }}">Restaurants</a></li>
+                                        {# Pour gérer les connexions/déconnexions #}
+                                        {% if not app.user %}
+                                        <li><a href="{{ path('security_login') }}">Connexion</a></li>
+                                        {% else %}
+                                        <li><a href="{{ path('security_logout') }}">Déconnexion</a></li>
+                                        {% endif %}
+                                    </ul>
+                                </nav>
+                                    <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </header>
+                <div class="clear"></div>
+            {% endblock %}
+    <body>
+        {% block body %}
+
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+
+            <!-- Renders app.js & a webpack runtime.js file
+                <script src="/build/runtime.js"></script>
+                <script src="/build/app.js"></script> -->
+
+            <script src="{{ asset('js/jquery.js') }}"></script>
+            <script src="{{ asset('js/jquery-migrate-1.1.1.js') }}"></script>
+            <script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
+            <script src="{{ asset('js/script.js') }}"></script>
+            <script src="{{ asset('js/superfish.js') }}"></script>
+            <script src="{{ asset('js/jquery.equalheights.js') }}"></script>
+            <script src="{{ asset('js/jquery.mobilemenu.js') }}"></script>
+            <script src="{{ asset('js/tmStickUp.js') }}"></script>
+            <script src="{{ asset('js/jquery.ui.totop.js') }}"></script>
+            <script src="{{ asset('js/touchTouch.jquery.js') }}"></script>
+            <script src="{{ asset('js/jquery.shuffle-images.js') }}"></script>
+            <script src="{{ asset('js/TMForm.js') }}"></script>
+            <script src="{{ asset('js/modal.js') }}"></script>
+
+
+            <script>
+                $(window).load(function(){
+                    $().UItoTop({ easingType: 'easeOutQuart' });
+                    $('.gallery .info').touchTouch();
+                });
+
+                $(document).ready(function(){
+                    $(".shuffle-me").shuffleImages({
+                        target: ".images > img"
+                    });
+                });
+            </script>
+
+
+            <div style=' clear: both; text-align:center; position: relative;'>
+                <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+                    <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+                </a>
+            </div>
+
+
+            <script src="js/html5shiv.js"></script>
+        {% endblock %}
+    </body>
+
+
+        <!--==============================
+                          footer
+            =================================-->
+
+        {% block footer %}
+                <footer id="footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="grid_12">
+                                <div class="copyright"> &copy; <span id="copyright-year"></span> | <a href="#">Privacy Policy</a>
+                                    <div class="sub_copyright">
+                                        Website designed by Modafferi Anthony
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </footer>
+
+
+
+
+
+            {% endblock %}
+    <div class="clear"></div>
+
+</html>
+
+
+

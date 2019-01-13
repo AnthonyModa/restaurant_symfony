@@ -1,0 +1,128 @@
+{% extends 'base.html.twig' %}
+
+    {% block title %}
+    Manger à Visé | Accueil
+    {% endblock %}
+
+    {% block head_css %}
+    {% endblock %}
+
+
+    {% block body %}
+        <section id="content"><div class="ic"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="page1_block">
+                        <div class="grid_6">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d80794.5821064185!2d5.616350595109644!3d50.74162902405805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0ee6427760e23%3A0x40099ab2f4d7200!2sVise!5e0!3m2!1sen!2sbe!4v1539093570918" width="600" height="450" style="border:0" allowfullscreen></iframe>
+                        </div>
+
+                        <div class="grid_6">
+                            <div class="pixlogo">
+                                <img src="" alt="Logo alt">
+                            </div>
+                            <div class="row">
+                                <div class="concept">
+                                    <h3>Explication du concept</h3>
+                                    <p>Manger à Visé est un catalogue de restaurant en ligne utilisant le framework Symfony  qui a pour but de renseigner des clients potentiels sur les possibilités gastronomiques de la ville de Visé</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+            <div class="shuffle-group">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="grid_4">
+                            <div data-si-mousemove-trigger="100" class="shuffle-me">
+                                <a href="{{ path('restaurant', {'id' : 28}) }}" class="info"><div class="shuffle_title"> Joïa <span>En savoir plus</span></div></a>
+                                <div class="images">
+                                    <img src="images/resto1.jpg" alt="" width="450" height="340">
+                                    <img src="images/resto3.jpeg" alt="" width="450" height="340">
+                                    <img src="images/resto3.jpeg" alt="" width="450" height="340">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid_4">
+                            <div data-si-mousemove-trigger="100" class="shuffle-me shuff__1">
+                                <a href="{{ path('restaurant', {'id' : 29}) }}" class="info"><div class="shuffle_title">Les 4 Saisons D'Asie<span>En savoir plus</span></div></a>
+                                <div class="images">
+                                    <img src="images/page1_img5.jpg" alt="">
+                                    <img src="images/shuffle_3.jpg" alt="">
+                                    <img src="images/shuffle_4.jpg" alt="">
+                                </div></div>
+                            <div data-si-mousemove-trigger="100" class="shuffle-me shuff__1">
+                                <a href="{{ path('restaurant', {'id' : 30}) }}" class="info"><div class="shuffle_title">I Love Burger<span>En savoir plus</span></div></a>
+                                <div class="images">
+                                    <img src="images/page1_img6.jpg" alt="">
+                                    <img src="images/shuffle_5.jpg" alt="">
+                                    <img src="images/shuffle_6.jpg" alt="">
+                                </div></div>
+                        </div>
+
+                        <div class="grid_4">
+                            <div data-si-mousemove-trigger="100" class="shuffle-me">
+                                <a href="{{ path('restaurant', {'id' : 27}) }}" class="info"><div class="shuffle_title"> Chez Adam <span>En savoir plus</span></div></a>
+                                <div class="images">
+                                    <img src="images/resto1.jpg" alt="" width="450" height="340">
+                                    <img src="images/resto3.jpeg" alt="" width="450" height="340">
+                                    <img src="images/resto3.jpeg" alt="" width="450" height="340">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="container gallery">
+                <div class="row">
+                    <div class="grid_8">
+                        <h4>Autres restos</h4>
+                        <div class="row">
+                            <div class="grid_4">
+                                <div class="view">
+                                    <img src="images/page1_img10.jpg" alt="" />
+                                    <div class="mask">
+                                        <a href="images/gallery/big3.jpg" class="info fa fa-search" title="Full Image"></a>
+                                    </div>
+                                </div>
+                                <blockquote class="bq1">
+                                    <img src="images/page1_img12.jpg" alt="">
+                                    <div class="extra_wrapper">
+                                        <p>“Curabitur vel lorem sit amet nulla erero fermentum. In vitae varius auguectetu ligula. Etiam dui eros, laoreet site am est vel commodo venenatisipiscing... ”</p>
+                                        <div class="color2">- Eva Smith, Client</div>
+                                    </div>
+                                </blockquote>
+                            </div>
+
+
+
+                            <div class="grid_4">
+                                <div class="view">
+                                    <img src="images/page1_img10.jpg" alt="" />
+                                    <div class="mask">
+                                        <a href="images/gallery/big3.jpg" class="info fa fa-search" title="Full Image"></a>
+                                    </div>
+                                </div>
+                                <blockquote class="bq1">
+                                    <img src="images/page1_img13.jpg" alt="">
+                                    <div class="extra_wrapper">
+                                        <p>“Ben ouais c'était vraiment méga bon quoi, tu vois valet ? C'était comme une bonne fricadelle sa mère mais encore en mieux, tu vois chef ? Franchement je mets bien un bon 10/10 sa mère... ”</p>
+                                        <div class="color2">- Mike Brown, Client</div>
+                                    </div>
+                                </blockquote>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+{% endblock %}
+

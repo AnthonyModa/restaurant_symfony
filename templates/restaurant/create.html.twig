@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formRestaurant 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+
+    <h1>
+        {% if editMode  %}
+            Modification de restaurant
+        {% else %}
+            Création d'un restaurant
+        {% endif %}
+    </h1>
+
+        {# Afficher la balise ouvrante du formulaire + certaines données essentielles au fonctionnement du formulaire #}
+        {{ form_start(formRestaurant) }}
+
+        {# Ici se trouvera tout le formulaire #}
+        {{ form_row(formRestaurant.titre, {'attr':{'placeholder':"Titre du restaurant"}}) }}
+        {{ form_row(formRestaurant.category)}}
+        {{ form_row(formRestaurant.image, {'attr':{'placeholder':"Image du restaurant"}}) }}
+        {{ form_row(formRestaurant.description, {'attr':{'placeholder':"Description du restaurant"}}) }}
+        {{ form_row(formRestaurant.informations, {'attr':{'placeholder':"Informations sur le restaurant"}}) }}
+        {{ form_row(formRestaurant.avis, {'attr':{'placeholder':"Avis sur le restaurant"}}) }}
+
+
+
+        <button type="submit" class="btn btn-success">
+        {% if editMode  %}
+            Enregistrer
+         {% else %}
+            Ajouter le restaurant
+         {% endif %}
+        </button>
+
+        {{ form_end(formRestaurant) }}
+
+
+{% endblock %}

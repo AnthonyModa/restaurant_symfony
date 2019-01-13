@@ -1,0 +1,8 @@
+#_errors:
+#    resource: '@TwigBundle/Resources/config/routing/errors.xml'
+#    prefix: /_error
+
+twig:
+  path: ['bootstrap_4_layout.html.twig']
+
+# J'ai du changer le form_themes en path pour que ça fonctionne, attention aux futures implications
