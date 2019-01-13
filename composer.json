@@ -63,11 +63,6 @@
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd",
-            "post-install-cmd": [
-              "php artisan clear-compiled",
-              "php artisan optimize",
-              "chmod -R 777 public/"
-            ]
         },
         "post-install-cmd": [
             "@auto-scripts"
